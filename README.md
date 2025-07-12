@@ -5,7 +5,7 @@ el SoC denominado ESP32 de Expressif. Para ello se utilizan las plataformas de d
 Arduino & OpenPLC.
 
 Como prueba de concepto, se han desarrollado 3 rutinas en Arduino y OpenPLC para demostrar 
-el funcionamiento del sistema. Dichas rutinas emplean un sistema con diferentes entradas 
+el funcionamiento del SoC. Dichas rutinas emplean un sistema con diferentes entradas 
 y salidas digitales.
 
 ## Composición del Sistema
@@ -25,3 +25,6 @@ El sistema esta compuesto por los siguientes elementos:
 + Una pantalla LCD.
 
 + Conjunto de cinco LEDs.
+
+Además, las rutinas programadas empleando Arduino emplean la librería: [LiquidCrystal_I2C de Frank de 
+Brabander](https://docs.arduino.cc/libraries/liquidcrystal-i2c/)
