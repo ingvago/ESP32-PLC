@@ -28,3 +28,17 @@ El sistema esta compuesto por los siguientes elementos:
 
 Además, las rutinas programadas empleando Arduino emplean la librería: [LiquidCrystal_I2C de Frank de 
 Brabander](https://docs.arduino.cc/libraries/liquidcrystal-i2c/)
+
+## Miembros
+
++ Nicolas Rosero.
+
++ Andrés Cabal.
+
++ Steven Mambague.
+
++ Wilmer Cuaical.
+
++ Luis Benavides.
+
++ Mauricio Diaz. (ing.vago)
