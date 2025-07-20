@@ -2,12 +2,20 @@ PROGRAM conexiones
   VAR
     TON0 : TON;
     TON1 : TON;
-    Pardada : BOOL;
-    Conmutar : BOOL;
+  END_VAR
+  VAR
+    Pardada AT %IX0.0 : BOOL;
+    Conmutar AT %IX0.4 : BOOL;
+  END_VAR
+  VAR
     Cambiar : BOOL;
     Detener : BOOL;
-    Delta : BOOL;
-    Estrella : BOOL;
+  END_VAR
+  VAR
+    Delta AT %QX0.5 : BOOL;
+    Estrella AT %QX0.6 : BOOL;
+  END_VAR
+  VAR
     YOn : BOOL;
     YOnAux : BOOL;
     DosOff : BOOL;

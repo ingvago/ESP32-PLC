@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0201" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:ns1="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Desconocido" productName="Sin nombre" productVersion="1" creationDateTime="2025-07-13T17:08:14"/>
-  <contentHeader name="Sin nombre" modificationDateTime="2025-07-13T20:22:26">
+  <contentHeader name="Sin nombre" modificationDateTime="2025-07-16T15:58:29">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -36,7 +36,9 @@
                 <xhtml:p><![CDATA[Determinar la duración de la conexión Delta]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="Pardada">
+          </localVars>
+          <localVars>
+            <variable name="Pardada" address="%IX0.0">
               <type>
                 <BOOL/>
               </type>
@@ -44,7 +46,7 @@
                 <xhtml:p><![CDATA[Entrada del usuario para detener el sistema]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="Conmutar">
+            <variable name="Conmutar" address="%IX0.4">
               <type>
                 <BOOL/>
               </type>
@@ -52,6 +54,8 @@
                 <xhtml:p><![CDATA[Entrada del usuario para cambiar el estado del sistema (conexion)]]></xhtml:p>
               </documentation>
             </variable>
+          </localVars>
+          <localVars>
             <variable name="Cambiar">
               <type>
                 <BOOL/>
@@ -68,7 +72,9 @@
                 <xhtml:p><![CDATA[Variable local para interrumpir todos los procesos]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="Delta">
+          </localVars>
+          <localVars>
+            <variable name="Delta" address="%QX0.5">
               <type>
                 <BOOL/>
               </type>
@@ -76,7 +82,7 @@
                 <xhtml:p><![CDATA[Determina salida para la conexion Delta]]></xhtml:p>
               </documentation>
             </variable>
-            <variable name="Estrella">
+            <variable name="Estrella" address="%QX0.6">
               <type>
                 <BOOL/>
               </type>
@@ -84,6 +90,8 @@
                 <xhtml:p><![CDATA[Determina salida para la conexion Estrella]]></xhtml:p>
               </documentation>
             </variable>
+          </localVars>
+          <localVars>
             <variable name="YOn">
               <type>
                 <BOOL/>

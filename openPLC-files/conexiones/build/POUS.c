@@ -44,12 +44,16 @@ __end:
 void CONEXIONES_init__(CONEXIONES *data__, BOOL retain) {
   TON_init__(&data__->TON0,retain);
   TON_init__(&data__->TON1,retain);
-  __INIT_VAR(data__->PARDADA,__BOOL_LITERAL(FALSE),retain)
-  __INIT_VAR(data__->CONMUTAR,__BOOL_LITERAL(FALSE),retain)
+  __INIT_LOCATED(BOOL,__IX0_0,data__->PARDADA,retain)
+  __INIT_LOCATED_VALUE(data__->PARDADA,__BOOL_LITERAL(FALSE))
+  __INIT_LOCATED(BOOL,__IX0_4,data__->CONMUTAR,retain)
+  __INIT_LOCATED_VALUE(data__->CONMUTAR,__BOOL_LITERAL(FALSE))
   __INIT_VAR(data__->CAMBIAR,__BOOL_LITERAL(FALSE),retain)
   __INIT_VAR(data__->DETENER,__BOOL_LITERAL(FALSE),retain)
-  __INIT_VAR(data__->DELTA,__BOOL_LITERAL(FALSE),retain)
-  __INIT_VAR(data__->ESTRELLA,__BOOL_LITERAL(FALSE),retain)
+  __INIT_LOCATED(BOOL,__QX0_5,data__->DELTA,retain)
+  __INIT_LOCATED_VALUE(data__->DELTA,__BOOL_LITERAL(FALSE))
+  __INIT_LOCATED(BOOL,__QX0_6,data__->ESTRELLA,retain)
+  __INIT_LOCATED_VALUE(data__->ESTRELLA,__BOOL_LITERAL(FALSE))
   __INIT_VAR(data__->YON,__BOOL_LITERAL(FALSE),retain)
   __INIT_VAR(data__->YONAUX,__BOOL_LITERAL(FALSE),retain)
   __INIT_VAR(data__->DOSOFF,__BOOL_LITERAL(FALSE),retain)
@@ -62,7 +66,7 @@ void CONEXIONES_init__(CONEXIONES *data__, BOOL retain) {
 void CONEXIONES_body__(CONEXIONES *data__) {
   // Initialise TEMP variables
 
-  __SET_VAR(data__->,DETENER,,(!(__GET_VAR(data__->CONMUTAR,)) && (__GET_VAR(data__->DETENER,) || __GET_VAR(data__->PARDADA,))));
+  __SET_VAR(data__->,DETENER,,(!(__GET_LOCATED(data__->CONMUTAR,)) && (__GET_VAR(data__->DETENER,) || __GET_LOCATED(data__->PARDADA,))));
   __SET_VAR(data__->TON1.,IN,,(((!(__GET_VAR(data__->DOSOFFAUX,)) && !(__GET_VAR(data__->DOSOFF,))) && !(__GET_VAR(data__->CAMBIAR,))) && !(__GET_VAR(data__->DETENER,))));
   __SET_VAR(data__->TON1.,PT,,__time_to_timespec(1, 10000, 0, 0, 0, 0));
   TON_body__(&data__->TON1);
@@ -71,17 +75,17 @@ void CONEXIONES_body__(CONEXIONES *data__) {
   __SET_VAR(data__->TON0.,PT,,__time_to_timespec(1, 10000, 0, 0, 0, 0));
   TON_body__(&data__->TON0);
   __SET_VAR(data__->,DOSOFF,,__GET_VAR(data__->TON0.Q,));
-  __SET_VAR(data__->,DELTA,,((!(__GET_VAR(data__->YONAUX,)) && !(__GET_VAR(data__->YON,))) && !(__GET_VAR(data__->DETENER,))));
-  __SET_VAR(data__->,ESTRELLA,,((__GET_VAR(data__->YON,) || __GET_VAR(data__->YONAUX,)) && !(__GET_VAR(data__->DETENER,))));
-  __SET_VAR(data__->TON2.,IN,,(((__GET_VAR(data__->CAMBIAR,) && !(__GET_VAR(data__->ESTRELLA,))) || ((!(__GET_VAR(data__->DOSOFFAUX,)) && !(__GET_VAR(data__->DOSOFF,))) && __GET_VAR(data__->YONAUX,))) && !(__GET_VAR(data__->DETENER,))));
+  __SET_LOCATED(data__->,DELTA,,((!(__GET_VAR(data__->YONAUX,)) && !(__GET_VAR(data__->YON,))) && !(__GET_VAR(data__->DETENER,))));
+  __SET_LOCATED(data__->,ESTRELLA,,((__GET_VAR(data__->YON,) || __GET_VAR(data__->YONAUX,)) && !(__GET_VAR(data__->DETENER,))));
+  __SET_VAR(data__->TON2.,IN,,(((__GET_VAR(data__->CAMBIAR,) && !(__GET_LOCATED(data__->ESTRELLA,))) || ((!(__GET_VAR(data__->DOSOFFAUX,)) && !(__GET_VAR(data__->DOSOFF,))) && __GET_VAR(data__->YONAUX,))) && !(__GET_VAR(data__->DETENER,))));
   __SET_VAR(data__->TON2.,PT,,__time_to_timespec(1, 500, 0, 0, 0, 0));
   TON_body__(&data__->TON2);
   __SET_VAR(data__->,YONAUX,,__GET_VAR(data__->TON2.Q,));
-  __SET_VAR(data__->TON3.,IN,,((__GET_VAR(data__->CAMBIAR,) && !(__GET_VAR(data__->DELTA,))) && !(__GET_VAR(data__->DETENER,))));
+  __SET_VAR(data__->TON3.,IN,,((__GET_VAR(data__->CAMBIAR,) && !(__GET_LOCATED(data__->DELTA,))) && !(__GET_VAR(data__->DETENER,))));
   __SET_VAR(data__->TON3.,PT,,__time_to_timespec(1, 500, 0, 0, 0, 0));
   TON_body__(&data__->TON3);
   __SET_VAR(data__->,DOSOFFAUX,,__GET_VAR(data__->TON3.Q,));
-  __SET_VAR(data__->,CAMBIAR,,((!(__GET_VAR(data__->DOSOFFAUX,)) && !(__GET_VAR(data__->DOSOFF,))) && (__GET_VAR(data__->CAMBIAR,) || (!(__GET_VAR(data__->DETENER,)) && __GET_VAR(data__->CONMUTAR,)))));
+  __SET_VAR(data__->,CAMBIAR,,((!(__GET_VAR(data__->DOSOFFAUX,)) && !(__GET_VAR(data__->DOSOFF,))) && (__GET_VAR(data__->CAMBIAR,) || (!(__GET_VAR(data__->DETENER,)) && __GET_LOCATED(data__->CONMUTAR,)))));
 
   goto __end;
 
